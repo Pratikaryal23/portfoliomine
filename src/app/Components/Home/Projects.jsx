@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import image1 from "/public/devdaha.jpeg";
 import image2 from "/public/Csit Association Logo.png";
+import image3 from "/public/neocart.png";
 
 const projects = [
   {
@@ -18,6 +19,14 @@ const projects = [
     description:
       "<p>Collaborated on developing a comprehensive web application for CSIT Association of BMC, focusing on responsive design, user-friendly layouts, and data-driven components for student information, events, and more.</p>",
     image: image2, // Replace with actual image path
+    link: "https://csitabmc.com", // Replace with actual project link
+  },
+
+  {
+    title: "Neo Cart (Hackathon Project )",
+    description:
+      "NeoCart is a AI driven Market PLace Where User finds Nepali Authenthic Products.The main Motive Of This Platform is To Scale Up Small Scale Business That Provides Nepali Authentic Goods. This PLatforms Not Only Sells Goods But also Attached Users Traditionally ",
+    image: image3, // Replace with actual image path
     link: "https://csitabmc.com", // Replace with actual project link
   },
   // Add more projects here if needed
@@ -47,7 +56,7 @@ const Projects = () => {
                   alt={project.title}
                   width={500}
                   height={300}
-                  className="object-cover w-full h-48"
+                  className="object-contain w-full h-60"
                 />
 
                 {/* Content */}

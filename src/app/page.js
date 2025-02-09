@@ -8,7 +8,7 @@ import Contact from './Components/Home/Contact'
 
 const page = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-14'>
       <Home/>
       <About />
         <SkillsCard/>

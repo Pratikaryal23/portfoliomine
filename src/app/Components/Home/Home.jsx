@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import image from "/public/mypic.png";
+import image from "/public/prateek.jpg";
 import { TypeAnimation } from "react-type-animation";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -33,7 +33,7 @@ const Home = () => {
                   style={{
                     fontSize: "3em",
                     display: "inline-block",
-                    color: "red",
+                    color: "purple",
                   }}
                   repeat={Infinity}
                 />
@@ -49,13 +49,13 @@ const Home = () => {
           </div>
 
           {/* Image Section */}
-          <div className="mt-6 lg:mt-0 lg:justify-end lg:flex">
+          <div className="mt-6 lg:mt-0 lg:justify-end lg:flex lg:fit lg:px-6 lg:py-6 border-2 border-black rounded-full">
             <Image
               src={image}
               alt="my image"
               width={300}
               height={300}
-              className="rounded-md md:w-80 md:h-80 lg:w-96 lg:h-96"
+              className="rounded-full md:w-80 md:h-80 lg:w-96 lg:h-96"
               priority
             />
           </div>
