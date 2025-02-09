@@ -41,9 +41,9 @@ const Home = () => {
 
               {/* Social Icons */}
               <div className="flex items-center gap-4 mt-4">
-                <FaFacebook className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" />
-                <FaTwitter className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" />
-                <FaLinkedin className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" />
+              <a href="https://www.facebook.com/share/1A7jYC6rzo/">  <FaFacebook className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
+               <a href="https://x.com/i/flow/login?redirect_after_login=%2Fpratik799840648"> <FaTwitter className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
+                <a href="ttps://www.linkedin.com/in/pratik-aryal-256a79289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
               </div>
             </div>
           </div>
