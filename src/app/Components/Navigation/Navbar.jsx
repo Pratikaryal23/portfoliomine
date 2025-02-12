@@ -6,12 +6,14 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Image from 'next/image'
 import image from '/public/mylogo.jpeg'
 
+
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false)
   const router = useRouter() // Get the current route
 
   const toggleNav = () => setNavOpen(!navOpen)
   const closeNav = () => setNavOpen(false)
+
 
   return (
     <div className="w-full h-20 sticky top-0 z-50 bg-gray-100 background-blur-lg bg-opacity-40">
@@ -34,8 +36,13 @@ const Navbar = () => {
                     {item}
                   </p>
                 </Link>
+
+               
               </li>
             ))}
+             <button onClick={()=>{
+           router.push('/login')
+             }}>Login</button>
           </ul>
 
           {/* Hamburger Icon */}

@@ -49,13 +49,13 @@ const Home = () => {
           </div>
 
           {/* Image Section */}
-          <div className="mt-6 lg:mt-0 lg:justify-end lg:flex lg:fit lg:px-6 lg:py-6 border-2 border-black rounded-full">
+          <div className="mt-6 lg:mt-0 lg:justify-end lg:flex lg:fit lg:px-3 lg:py-3 border-2 border-black rounded-full">
             <Image
               src={image}
               alt="my image"
               width={300}
               height={300}
-              className="rounded-full md:w-80 md:h-80 lg:w-96 lg:h-96"
+              className="rounded-full md:w-80 md:h-80 lg:w-64 lg:h-64"
               priority
             />
           </div>
