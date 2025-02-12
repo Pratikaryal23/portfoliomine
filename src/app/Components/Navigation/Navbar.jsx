@@ -26,7 +26,7 @@ const Navbar = () => {
           <ul className="hidden md:flex gap-9 text-black">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
               <li key={item}>
-                <Link href={`/${item.toLowerCase()}`}>
+                {/* <Link href={`/${item.toLowerCase()}`}>
                   <p
                     onClick={closeNav}
                     className={`${
@@ -35,14 +35,14 @@ const Navbar = () => {
                   >
                     {item}
                   </p>
-                </Link>
+                </Link> */}
 
                
               </li>
             ))}
-             <button onClick={()=>{
+             {/* <button onClick={()=>{
            router.push('/login')
-             }}>Login</button>
+             }}>Login</button> */}
           </ul>
 
           {/* Hamburger Icon */}

@@ -19,17 +19,25 @@ const Login = () => {
       const response = await axios.post(
         "https://api.durlavparajuli.com.np/api/auth/login",
         login,
+        
         {
           headers: {
             "Content-Type": "application/json",
           },
-          body:JSON.stringify(user),
         }
       );
 
       console.log("Response:", response.data);
-    } catch (error ) {
-      console.error("Error:");
+
+      // Save token in localStorage
+      localStorage.setItem("token", response.data.token);
+
+      alert("Login Successful!");
+
+
+    } catch (error) {
+      console.error("Login Error:", error.response_data || error.message);
+      alert("Login Failed! Check your credentials.");
     }
   };
 
