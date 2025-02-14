@@ -62,7 +62,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      <h1 className="text-4xl line-clamp-4 px-32 font-bold">ON    BUILDING PHASE .We Will      BACK SOON . Thank YOU</h1>
+      <h1 className="text-4xl line-clamp-4 px-32 font-bold">ON    BUILDING PHASE .We Will  BE   BACK SOON . Thank YOU</h1>
     </>
   );
 };
