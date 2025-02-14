@@ -8,13 +8,13 @@ import Contact from './Components/Home/Contact'
 
 const page = () => {
   return (
-    <div className='flex flex-col gap-14'>
+    <div className='flex flex-col gap-2'>
       <Home/>
-      {/* <About />
+      <About />
         <SkillsCard/>
         <Projects/>
         <Workedwith/>
-        <Contact/> */}
+        <Contact/>
       </div>
   )
 }

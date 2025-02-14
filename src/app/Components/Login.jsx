@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router=useRouter()
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -88,7 +90,9 @@ const Login = () => {
           >
             Login
           </button>
-          <button className="bg-green-600 hover:bg-green-700 text-white w-1/2 py-2 rounded-md">
+          <button className="bg-green-600 hover:bg-green-700 text-white w-1/2 py-2 rounded-md" onClick={()=>{
+            router.push('/register')
+          }}>
             Register Now
           </button>
         </div>

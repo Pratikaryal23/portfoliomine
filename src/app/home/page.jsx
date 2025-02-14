@@ -12,11 +12,11 @@ const page = () => {
     <>
       <div className="flex flex-col gap-20">
         <Home />
-        {/* <About /> */}
-        {/* <Skills/> */}
-        {/* <Projects/> */}
-        {/* <Workedwith/> */}
-        {/* <Contact/> */}
+         <About /> 
+                 <Skills/> 
+         <Projects/>
+         <Workedwith/>
+        <Contact/> 
       </div>
     </>
   );

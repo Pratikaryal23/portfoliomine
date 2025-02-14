@@ -7,63 +7,64 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <>
-      {/* <div className="bg-gray-200 flex justify-center items-center py-10">
-        <div className="w-11/12 mx-auto flex flex-col lg:flex-row lg:justify-between items-center gap-8"> */}
-          {/* Text and Animation Section */}
-          {/* <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <p className="flex flex-col gap-3 text-3xl md:text-4xl lg:text-6xl font-semibold">
-              <span>Hi</span>
-              <span>I am</span>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white px-6">
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+        
+        {/* Left Side - Intro & Animation */}
+        <div className="space-y-6">
+          <p className="text-3xl md:text-5xl font-extrabold">
+            <span className="block text-gray-400">Hello,</span>
+            <span className="block text-white">I am</span>
+            <span className="block bg-gradient-to-r from-emerald-400 to-cyan-400 text-transparent bg-clip-text">
               Pratik Aryal
-            </p> */}
+            </span>
+          </p>
 
-            {/* <div className="flex flex-col items-center lg:items-start gap-5 mt-4"> */}
-              {/* Setting a min-width on the TypeAnimation wrapper to avoid layout shifts */}
-              {/* <div style={{ minWidth: "300px", textAlign: "center" }}>
-                <TypeAnimation
-                  sequence={[
-                    "I am a Front-End Developer",
-                    1000,
-                    "I am a UI/UX Designer",
-                    1000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  style={{
-                    fontSize: "3em",
-                    display: "inline-block",
-                    color: "purple",
-                  }}
-                  repeat={Infinity}
-                />
-              </div> */}
-
-              {/* Social Icons */}
-              {/* <div className="flex items-center gap-4 mt-4">
-              <a href="https://www.facebook.com/share/1A7jYC6rzo/">  <FaFacebook className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
-               <a href="https://x.com/i/flow/login?redirect_after_login=%2Fpratik799840648"> <FaTwitter className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
-                <a href="ttps://www.linkedin.com/in/pratik-aryal-256a79289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><FaLinkedin className="p-3 w-12 h-12 bg-black rounded-full text-white hover:scale-105 transition-all" /></a>
-              </div> */}
-            {/* </div> */}
-          {/* // </div> */}
-
-          {/* Image Section */}
-          {/* <div className="mt-6 lg:mt-0 lg:justify-end lg:flex lg:fit lg:px-3 lg:py-3 border-2 border-black rounded-full">
-            <Image
-              src={image}
-              alt="my image"
-              width={300}
-              height={300}
-              className="rounded-full md:w-80 md:h-80 lg:w-64 lg:h-64"
-              priority
+          {/* Typing Animation */}
+          <div className="text-2xl md:text-3xl font-medium text-gray-300">
+            <TypeAnimation
+              sequence={[
+                "Front-End Developer 🚀",
+                1500,
+                "UI/UX Designer 🎨",
+                1500,
+                "Creative Thinker 💡",
+                1500,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
             />
           </div>
-        </div>
-      </div> */}
 
-      <h1 className="text-4xl line-clamp-4 px-32 font-bold">ON    BUILDING PHASE .We Will  BE   BACK SOON . Thank YOU</h1>
-    </>
+          {/* Social Icons */}
+          <div className="flex justify-center lg:justify-start space-x-6 mt-5">
+            <a href="https://www.facebook.com/share/1A7jYC6rzo/" target="_blank">
+              <FaFacebook className="w-12 h-12 p-3 rounded-full bg-gray-700 text-white hover:bg-blue-600 hover:scale-110 transition-all shadow-lg" />
+            </a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2Fpratik799840648" target="_blank">
+              <FaTwitter className="w-12 h-12 p-3 rounded-full bg-gray-700 text-white hover:bg-sky-500 hover:scale-110 transition-all shadow-lg" />
+            </a>
+            <a href="https://www.linkedin.com/in/pratik-aryal-256a79289" target="_blank">
+              <FaLinkedin className="w-12 h-12 p-3 rounded-full bg-gray-700 text-white hover:bg-blue-700 hover:scale-110 transition-all shadow-lg" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Side - Image with Glow Effect */}
+        <div className="relative group">
+          <div className="absolute inset-0 bg-emerald-400 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-all"></div>
+          <Image
+            src={image}
+            alt="Pratik Aryal"
+            width={320}
+            height={320}
+            className="rounded-full border-4 border-gray-600 shadow-xl transition-transform hover:scale-105"
+            priority
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

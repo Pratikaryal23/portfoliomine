@@ -1,4 +1,3 @@
-// PortfolioCard.js
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,77 +10,68 @@ const projects = [
     title: "Devdaha Medical College Project",
     description:
       "<p>Developed a comprehensive web application for Devdaha Medical College, focusing on responsive design, user-friendly layouts, and data-driven components for student information, admissions, and more.</p>",
-    image: image1, // Replace with actual image path
-    link: "https://devdahamedicalcollege.edu.np", // Replace with actual project link
+    image: image1,
+    link: "https://devdahamedicalcollege.edu.np",
   },
   {
     title: "CSIT ASSOCIATION OF BMC",
     description:
-      "<p>Collaborated on developing a comprehensive web application for CSIT Association of BMC, focusing on responsive design, user-friendly layouts, and data-driven components for student information, events, and more.</p>",
-    image: image2, // Replace with actual image path
-    link: "https://csitabmc.com", // Replace with actual project link
+      "<p>Collaborated on developing a web app for CSIT Association of BMC, focusing on responsive design, user-friendly layouts, and data-driven components for student information, events, and more.</p>",
+    image: image2,
+    link: "https://csitabmc.com",
   },
-
   {
-    title: "Neo Cart (Hackathon Project )",
+    title: "Neo Cart (Hackathon Project)",
     description:
-      "NeoCart is a AI driven Market PLace Where User finds Nepali Authenthic Products.The main Motive Of This Platform is To Scale Up Small Scale Business That Provides Nepali Authentic Goods. This PLatforms Not Only Sells Goods But also Attached Users Traditionally ",
-    image: image3, // Replace with actual image path
-    link: "https://csitabmc.com", // Replace with actual project link
+      "<p>NeoCart is an AI-driven marketplace for authentic Nepali products, supporting small-scale businesses and promoting traditional goods.</p>",
+    image: image3,
+    link: "https://csitabmc.com",
   },
-  // Add more projects here if needed
 ];
 
 const Projects = () => {
   return (
-    <>
-      <div className="w-10/12 mx-auto">
-        <div className="  gap-2">
-          <h2 className="text-3xl font-bold text-center mb-8  py-1  "> My
-            {" "}
-            <span className="text-red-400 border-b-2 border-black py-2">Projects</span> 
-          </h2>
-        </div>
-
-        <div className="w-full flex justify-center py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                {/* Image */}
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={300}
-                  className="object-contain w-full h-60"
-                />
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                    {project.title}
-                  </h3>
-                  <div
-                    className="text-gray-600 mb-4 line-clamp-4"
-                    dangerouslySetInnerHTML={{ __html: project.description }}
-                  ></div>
-
-                  {/* Link to Project */}
-                  <Link href={project.link} passHref>
-                    <button className="mt-4 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 focus:outline-none">
-                      View Project
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-16">
+      {/* Heading */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold">
+          My <span className="text-blue-400 border-b-4 border-blue-500 pb-1">Projects</span>
+        </h2>
       </div>
-    </>
+
+      {/* Project Cards */}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            {/* Image */}
+            <div className="relative w-full h-60">
+              <Image src={project.image} alt={project.title} layout="fill" objectFit="contain" />
+            </div>
+
+       
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold text-blue-300 mb-2">{project.title}</h3>
+              <div
+                className="text-gray-300 text-sm line-clamp-3"
+                dangerouslySetInnerHTML={{ __html: project.description }}
+              ></div>
+
+            
+              <div className="mt-6 text-center">
+                <Link href={project.link} passHref>
+                  <button className="px-5 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
+                    View Project
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

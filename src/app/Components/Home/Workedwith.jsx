@@ -15,7 +15,7 @@ const companies = [
 const Workedwith = () => {
   return (
     <div className="w-full overflow-hidden py-4 flex flex-col gap-12 ">
-        <h1 className="flex justify-center items-center text-3xl  gap-2 font-bold"><span className="text-red-500 border-b-2 border-black py-1">Worked</span> With</h1>
+        <h1 className="flex justify-center items-center text-3xl  gap-2 font-bold"><span className="text-blue-600 border-b-2 border-black py-1">Worked</span> With</h1>
       <Marquee speed={50}>
         {/* Map through the companies and render their logos */}
         {companies.map((company, index) => (
