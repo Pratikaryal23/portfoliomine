@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 import image from "/public/mylogo.jpeg";
@@ -7,6 +8,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-10 px-5 md:px-16">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center md:text-left md:flex-row md:justify-between gap-6">
+        
         {/* Logo and Branding */}
         <div className="flex flex-col items-center md:items-start">
           <Image src={image} alt="Logo" width={80} height={80} className="rounded-full shadow-lg" />
@@ -17,26 +19,37 @@ const Footer = () => {
         {/* Quick Links */}
         <div className="hidden md:flex flex-col text-gray-300 space-y-2">
           <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-          <a href="/" className="hover:text-emerald-400 transition">Home</a>
-          <a href="/about" className="hover:text-emerald-400 transition">About</a>
-          <a href="/projects" className="hover:text-emerald-400 transition">Projects</a>
-          <a href="/contact" className="hover:text-emerald-400 transition">Contact</a>
+          <Link href="/" className="hover:text-emerald-400 transition">Home</Link>
+          <Link href="/about" className="hover:text-emerald-400 transition">About</Link>
+          <Link href="/projects" className="hover:text-emerald-400 transition">Projects</Link>
+          <Link href="/contact" className="hover:text-emerald-400 transition">Contact</Link>
         </div>
 
         {/* Social Icons */}
         <div className="flex space-x-6">
-          <a href="#" className="group p-4 rounded-full bg-gray-800 hover:bg-blue-600 transition-all">
-            <FaFacebookF size={24} className="text-white group-hover:scale-110 transition-transform" />
-          </a>
-          <a href="#" className="group p-4 rounded-full bg-gray-800 hover:bg-blue-500 transition-all">
-            <FaLinkedinIn size={24} className="text-white group-hover:scale-110 transition-transform" />
-          </a>
-          <a href="#" className="group p-4 rounded-full bg-gray-800 hover:bg-gray-500 transition-all">
-            <FaGithub size={24} className="text-white group-hover:scale-110 transition-transform" />
-          </a>
-          <a href="#" className="group p-4 rounded-full bg-gray-800 hover:bg-pink-500 transition-all">
-            <FaInstagram size={24} className="text-white group-hover:scale-110 transition-transform" />
-          </a>
+          <Link href="https://www.facebook.com/share/1A7jYC6rzo/" target="_blank">
+            <span className="group p-4 rounded-full bg-gray-800 hover:bg-blue-600 transition-all">
+              <FaFacebookF size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </span>
+          </Link>
+
+          <Link href="https://www.linkedin.com/in/pratik-aryal-256a79289" target="_blank">
+            <span className="group p-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-500 transition-all">
+              <FaLinkedinIn size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </span>
+          </Link>
+
+          <Link href="https://github.com/your-github-profile" target="_blank">
+            <span className="group p-4 rounded-full bg-gray-800 hover:bg-gray-500 transition-all">
+              <FaGithub size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </span>
+          </Link>
+
+          <Link href="https://www.instagram.com/your-instagram-profile" target="_blank">
+            <span className="group p-4 rounded-full bg-gray-800 hover:bg-pink-500 transition-all">
+              <FaInstagram size={24} className="text-white group-hover:scale-110 transition-transform" />
+            </span>
+          </Link>
         </div>
       </div>
 

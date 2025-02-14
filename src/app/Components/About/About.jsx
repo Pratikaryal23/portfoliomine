@@ -18,7 +18,7 @@ const About = () => {
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 px-6">
         {/* Left Side - Text Content */}
         <div className="flex-1 text-center lg:text-left">
-          <h3 className="text-3xl font-semibold text-blue-300 mb-4">Hello, I'm Prateek 👋</h3>
+          <h3 className="text-3xl font-semibold text-blue-300 mb-4">Hello, I am Prateek 👋</h3>
           <p className="text-gray-300 leading-relaxed">
             A passionate **UI/UX Designer and Web Developer** who loves crafting engaging digital experiences. 
             I specialize in **Next.js, Tailwind CSS, and modern web technologies** to build seamless and 

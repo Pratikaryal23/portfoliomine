@@ -18,7 +18,7 @@ const Contact = () => {
         <h1 className="text-4xl font-extrabold text-gray-900">
           <span className="text-blue-600 border-b-4 border-blue-600 pb-1">Contact</span> Me
         </h1>
-        <p className="text-gray-600 mt-2">I'd love to hear from you! Feel free to reach out.</p>
+        <p className="text-gray-600 mt-2">I would love to hear from you! Feel free to reach out.</p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-12 w-11/12 max-w-6xl mx-auto">
