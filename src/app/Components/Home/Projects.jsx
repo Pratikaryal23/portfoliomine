@@ -31,7 +31,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-16">
+    <section className="bg-gradient-to-r from-[#141e30] to-[#243b55] text-white py-16">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold">

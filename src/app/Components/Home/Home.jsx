@@ -21,7 +21,7 @@ const Home = () => {
           </p>
 
           {/* Typing Animation */}
-          <div className="text-2xl md:text-3xl font-medium text-gray-300">
+          <div className="text-2xl md:text-3xl font-medium text-gray-300 flex flex-col gap-4">
             <TypeAnimation
               sequence={[
                 "Front-End Developer 🚀",
@@ -35,6 +35,7 @@ const Home = () => {
               speed={50}
               repeat={Infinity}
             />
+            <p className="w-[600px] text-gray-400 text-lg">I specialize in crafting intuitive digital solutions that enhance user experiences and drive meaningful change. I bridge the gap between innovation and social services to create impactful digital experiences</p>
           </div>
 
           {/* Social Icons */}
@@ -59,8 +60,9 @@ const Home = () => {
             alt="Pratik Aryal"
             width={320}
             height={320}
-            className="rounded-full border-4 border-gray-600 shadow-xl transition-transform hover:scale-105"
+            className="rounded-full border-4 w-[500px] h-[500px] border-gray-600 shadow-xl transition-transform hover:scale-105"
             priority
+            style={{ borderRadius: "100% 20% 70% 50% / 30% 68% 32% 70% " }}
           />
         </div>
       </div>

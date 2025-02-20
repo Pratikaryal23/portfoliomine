@@ -10,7 +10,7 @@ import Workedwith from "../Components/Home/Workedwith";
 const page = () => {
   return (
     <>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-[0.5px]">
         <Home />
          <About /> 
                  <Skills/> 

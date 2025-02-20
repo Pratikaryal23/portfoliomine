@@ -28,26 +28,26 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex space-x-6">
           <Link href="https://www.facebook.com/share/1A7jYC6rzo/" target="_blank">
-            <span className="group p-4 rounded-full bg-gray-800 hover:bg-blue-600 transition-all">
-              <FaFacebookF size={24} className="text-white group-hover:scale-110 transition-transform" />
+            <span className=" rounded-full bg-gray-800 hover:bg-blue-600 transition-all">
+              <FaFacebookF  className="text-white group-hover:scale-110 transition-transform" />
             </span>
           </Link>
 
           <Link href="https://www.linkedin.com/in/pratik-aryal-256a79289" target="_blank">
-            <span className="group p-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-500 transition-all">
-              <FaLinkedinIn size={24} className="text-white group-hover:scale-110 transition-transform" />
+            <span className=" w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-500 transition-all">
+              <FaLinkedinIn  className="text-white group-hover:scale-110 transition-transform" />
             </span>
           </Link>
 
           <Link href="https://github.com/your-github-profile" target="_blank">
-            <span className="group p-4 rounded-full bg-gray-800 hover:bg-gray-500 transition-all">
-              <FaGithub size={24} className="text-white group-hover:scale-110 transition-transform" />
+            <span className=" rounded-full bg-gray-800 hover:bg-gray-500 transition-all">
+              <FaGithub className="text-white group-hover:scale-110 transition-transform" />
             </span>
           </Link>
 
           <Link href="https://www.instagram.com/your-instagram-profile" target="_blank">
-            <span className="group p-4 rounded-full bg-gray-800 hover:bg-pink-500 transition-all">
-              <FaInstagram size={24} className="text-white group-hover:scale-110 transition-transform" />
+            <span className=" rounded-full bg-gray-800 hover:bg-pink-500 transition-all">
+              <FaInstagram  className="text-white group-hover:scale-110 transition-transform" />
             </span>
           </Link>
         </div>

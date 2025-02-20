@@ -1,58 +1,66 @@
 import React from "react";
 import Image from "next/image";
-import profileImage from "/public/prateek.jpg";
-import image1 from "/public/image1.jpg";
-import image2 from "/public/image2.jpg";
-import image3 from "/public/image3.jpg";
+import profilePic from "/public/image1.jpg"; // Update with your actual image path
 
 const About = () => {
   return (
-    <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16">
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold">
-          About <span className="text-blue-400 border-b-4 border-blue-500 pb-1">Me</span>
-        </h2>
-      </div>
+    <section className="bg-gradient-to-r from-[#141e30] to-[#243b55] text-white py-16 px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Side - Profile */}
+        <div className="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+          <div className="flex justify-center">
+            <Image
+              src={profilePic}
+              alt="Profile"
+              width={150}
+              height={150}
+              className="rounded-full w-72 h-72 border-4 border-blue-400 shadow-lg"
+            />
+          </div>
+          <h2 className="text-2xl font-bold mt-4">Pratik Aryal</h2>
+          <p className="text-gray-300">Software Developer</p>
 
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 px-6">
-        {/* Left Side - Text Content */}
-        <div className="flex-1 text-center lg:text-left">
-          <h3 className="text-3xl font-semibold text-blue-300 mb-4">Hello, I am Prateek 👋</h3>
-          <p className="text-gray-300 leading-relaxed">
-            A passionate **UI/UX Designer and Web Developer** who loves crafting engaging digital experiences. 
-            I specialize in **Next.js, Tailwind CSS, and modern web technologies** to build seamless and 
-            user-friendly interfaces.
-          </p>
-          <p className="text-gray-300 mt-4">
-            My goal is to transform ideas into functional, **aesthetic, and high-performance applications** 
-            that delight users. I believe in minimalistic design, smooth animations, and pixel-perfect UI.
-          </p>
-          <button className="mt-6 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition">
-            Contact Me
+          {/* Social Links */}
+          <div className="flex justify-center gap-4 mt-4">
+            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+              🔗
+            </a>
+            <a href="#" className="text-gray-400 hover:text-blue-400 text-xl">
+              🔗
+            </a>
+          </div>
+
+          {/* Download CV Button */}
+          <button className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600">
+            Download CV
           </button>
         </div>
 
-        {/* Right Side - Profile Image */}
-        <div className="flex-1 flex justify-center">
-          <div className="relative w-72 h-72">
-            <Image 
-              src={profileImage} 
-              alt="Profile" 
-              layout="fill" 
-              className=" rounded-full border-4 border-blue-400 shadow-lg"
-            />
+        {/* Right Side - About Me */}
+        <div className="bg-gray-800 rounded-xl p-8 shadow-lg">
+          <h3 className="text-3xl font-bold text-blue-400">About <span className="text-white">Me</span></h3>
+          <p className="text-gray-300 mt-4">
+            I'm a passionate software developer and open-source enthusiast. I love exploring how technology can improve efficiency and building scalable systems.
+          </p>
+
+          {/* Personal Details */}
+          <div className="grid grid-cols-2 gap-4 mt-6 text-gray-300">
+            <p><span className="text-blue-300 font-semibold">Age:</span> 20</p>
+            <p><span className="text-blue-300 font-semibold">Residence:</span> Nepal</p>
+            <p><span className="text-blue-300 font-semibold">Address:</span> Gulmi</p>
+            <p><span className="text-blue-300 font-semibold">Email:</span>aryalpratik057@gmail.com</p>
+            <p><span className="text-blue-300 font-semibold">Phone:</span> 9845455112</p>
+          </div>
+
+          {/* Tech Stack */}
+          <h3 className="text-2xl font-bold text-blue-400 mt-8">My <span className="text-white">Tech Stack</span></h3>
+          <div className="grid grid-cols-2 gap-4 mt-4 text-gray-300">
+            <p><span className="font-semibold">Graphics</span> 0.5yrs</p>
+            <p><span className="font-semibold">Javascript</span> 6 months</p>
+            <p><span className="font-semibold">HTML, CSS </span> 3 yrs</p>
+            <p><span className="font-semibold">React,Nextjs</span> 3 yrs</p>
           </div>
         </div>
-      </div>
-
-      {/* Multiple Images Section */}
-      <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-        {[image1, image2, image3].map((img, index) => (
-          <div key={index} className="overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-            <Image src={img} alt={`About image ${index + 1}`} className="w-full h-64 object-cover" />
-          </div>
-        ))}
       </div>
     </section>
   );
