@@ -5,7 +5,10 @@ const page = () => {
   return (
 
   <>
+  <div id="about">
+
   <About/>
+  </div>
   </>
   )
 };

@@ -4,7 +4,10 @@ import Contact from '../Components/Home/Contact'
 const page = () => {
   return (
 <>
+<div id='contact'>
+
 <Contact/>
+</div>
 </>
   )
 }

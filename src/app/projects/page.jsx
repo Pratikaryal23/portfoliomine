@@ -3,7 +3,7 @@ import Projects from '../Components/Home/Projects'
 
 const page = () => {
   return (
-    <div><Projects/></div>
+    <div id='projects'><Projects/></div>
   )
 }
 
