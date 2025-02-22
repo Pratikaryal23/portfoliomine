@@ -1,62 +1,71 @@
-// import { createContext } from "react";
 
+'use client'
+import { createContext, useContext, useState, useEffect } from "react";
 
-//  export const CreateAuth=createContextContext();
+export const AuthContext = createContext();
 
-//  export const AuthProvider=()=>{
-//     const [token, setToken] = useState(localStorage.getItem("token"));
+export const AuthProvider = ({ children }) => {
+	const [token, setToken] = useState(localStorage.getItem("token") || "");
+	const [user, setUser] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const API = "https://api.durlavparajuli.com.np"; // Replace with your actual API
 
-//     const storeToken = (serverToken) => {
-// 		setToken(serverToken);
-// 		return localStorage.setItem("token", serverToken);
-// 	};
-//     const LogoutUser = () => {
-// 		setToken("");
-// 		localStorage.removeItem("token");
-		
-// 	};
-//     let isLoggedIn = !!(token === localStorage.getItem("token"));
-	
-// 	console.log("Login Status: " + isLoggedIn);
+	const storeToken = (serverToken) => {
+		setToken(serverToken);
+		localStorage.setItem("token", serverToken);
+	};
 
-//     const userAuthentication = async () => {
-// 		try {
-// 			const response = await fetch(`${API}/api/auth/user`, {
-// 				method: "GET",
-// 				headers: {
-// 					Authorization: `Bearer ${token}`,
-// 				},
-// 			});
-// 			// console.log( response );
-// 			if (response.ok) {
-// 				const data = await response.json();
-// 				// console.log( data );
-// 				setUser(data.userData);
-// 			} else {
-// 				// logging out for any unauthorized or error response
-// 				LogoutUser();
-// 			}
-// 		} catch (error) {
-// 			console.log(error);
-// 		}
-// 	};
-//     useEffect(() => {
-// 		if (!token) {
-// 			// Token is not present, log out immediately
-// 			LogoutUser();
-// 		} else {
-// 			// Token is present, perform authentication
-// 			userAuthentication();
-// 		}
-// 	}, [token]);
-//  }
+	const LogoutUser = () => {
+		setToken("");
+		localStorage.removeItem("token");
+		setUser(null);
+	};
 
-import React from 'react'
+	let isLoggedIn = !!token;
 
-const auth = () => {
-  return (
-	<div>auth</div>
-  )
-}
+	const userAuthentication = async () => {
+		setLoading(true);
+		try {
+			const response = await fetch(`${API}/api/auth/user`, {
+				method: "GET",
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			});
 
-export default auth
+			if (response.ok) {
+				const data = await response.json();
+				setUser(data.userData);
+			} else {
+				LogoutUser();
+			}
+		} catch (error) {
+			console.error("Error during authentication:", error);
+			LogoutUser();
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		if (token) {
+			userAuthentication();
+		} else {
+			LogoutUser();
+		}
+	}, [token]);
+
+	return (
+		<AuthContext.Provider value={{ isLoggedIn, storeToken, LogoutUser, user, token, API, loading }}>
+			{children}
+		</AuthContext.Provider>
+	);
+};
+
+export const useAuth = () => {
+  const authContextValue = useContext(AuthContext);
+  if (!authContextValue) {
+    // throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return authContextValue;
+};

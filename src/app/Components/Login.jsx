@@ -1,16 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/store/auth";
 
 const Login = () => {
-  const router=useRouter()
+  const router = useRouter();
   const [login, setLogin] = useState({
     email: "",
     password: "",
   });
+
+  const auth = useAuth(); // Ensure useAuth is properly used
+  if (!auth) {
+    console.error("Auth context is undefined. Ensure it is properly set up.");
+  }
+  const { storeToken, isLoggedIn } = auth || {}; // Avoid destructuring if auth is undefined
+
+  
 
   const handleInput = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
@@ -21,7 +30,6 @@ const Login = () => {
       const response = await axios.post(
         "https://api.durlavparajuli.com.np/api/auth/login",
         login,
-        
         {
           headers: {
             "Content-Type": "application/json",
@@ -31,13 +39,16 @@ const Login = () => {
 
       console.log("Response:", response.data);
 
-      localStorage.setItem("token", response.data.token);
+      if (storeToken) {
+        storeToken(response.data.token);
+      } else {
+        localStorage.setItem("token", response.data.token); 
+      }
 
       alert("Login Successful!");
-
-
+      router.push("/");
     } catch (error) {
-      console.error("Login Error:", error.response_data || error.message);
+      console.error("Login Error:", error.response?.data || error.message);
       alert("Login Failed! Check your credentials.");
     }
   };
@@ -90,9 +101,12 @@ const Login = () => {
           >
             Login
           </button>
-          <button className="bg-green-600 hover:bg-green-700 text-white w-1/2 py-2 rounded-md" onClick={()=>{
-            router.push('/register')
-          }}>
+          <button
+            className="bg-green-600 hover:bg-green-700 text-white w-1/2 py-2 rounded-md"
+            onClick={() => {
+              router.push("/register");
+            }}
+          >
             Register Now
           </button>
         </div>

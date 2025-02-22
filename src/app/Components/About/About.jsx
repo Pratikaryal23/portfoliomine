@@ -15,7 +15,7 @@ const About = () => {
               alt="Profile"
               width={150}
               height={150}
-              className="rounded-full w-48 h-48 sm:w-60 sm:h-60 border-4 border-blue-400 shadow-lg"
+              className="rounded-full w-48 h-48 sm:w-72 sm:h-72 border-4 border-blue-400 shadow-lg object-cover"
             />
           </div>
           <h2 className="text-2xl font-bold mt-4">Pratik Aryal</h2>
