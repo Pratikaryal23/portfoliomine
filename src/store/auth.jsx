@@ -47,13 +47,13 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
-	useEffect(() => {
-		if (token) {
-			userAuthentication();
-		} else {
-			LogoutUser();
-		}
-	}, [token]);
+	// useEffect(() => {
+	// 	if (token) {
+	// 		userAuthentication();
+	// 	} else {
+	// 		LogoutUser();
+	// 	}
+	// }, [token]);
 
 	return (
 		<AuthContext.Provider value={{ isLoggedIn, storeToken, LogoutUser, user, token, API, loading }}>
