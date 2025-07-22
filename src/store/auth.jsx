@@ -8,8 +8,7 @@ export const AuthProvider = ({ children }) => {
 	const [token, setToken] = useState(localStorage.getItem("token") || "");
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
-	const API = "https://api.durlavparajuli.com.np"; // Replace with your actual API
-
+	const API = "https://api.durlavparajuli.com.np"; 
 	const storeToken = (serverToken) => {
 		setToken(serverToken);
 		localStorage.setItem("token", serverToken);
@@ -47,13 +46,13 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
-	// useEffect(() => {
-	// 	if (token) {
-	// 		userAuthentication();
-	// 	} else {
-	// 		LogoutUser();
-	// 	}
-	// }, [token]);
+	useEffect(() => {
+		if (token) {
+			userAuthentication();
+		} else {
+			LogoutUser();
+		}
+	}, [token]);
 
 	return (
 		<AuthContext.Provider value={{ isLoggedIn, storeToken, LogoutUser, user, token, API, loading }}>

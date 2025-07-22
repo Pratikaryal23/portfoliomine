@@ -13,11 +13,11 @@ const Login = () => {
     password: "",
   });
 
-  const auth = useAuth(); // Ensure useAuth is properly used
+  const auth = useAuth(); // Ensures garxa ki  useAuth is properly used vaxakinai
   if (!auth) {
     console.error("Auth context is undefined. Ensure it is properly set up.");
   }
-  const { storeToken, isLoggedIn } = auth || {}; // Avoid destructuring if auth is undefined
+  const { storeToken } = auth || {}; // Avoid destructuring if auth is undefined
 
   
 
@@ -41,9 +41,11 @@ const Login = () => {
 
       if (storeToken) {
         storeToken(response.data.token);
-      } else {
+      }
+       else {
         localStorage.setItem("token", response.data.token); 
       }
+      
 
       alert("Login Successful!");
       router.push("/");

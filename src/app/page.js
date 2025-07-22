@@ -8,10 +8,10 @@ import Contact from './Components/Home/Contact'
 
 const page = () => {
   return (
-    <div className='flex flex-col gap-1'>
+    <div className='flex flex-col '>
       <Home/>
       <About />
-        <SkillsCard/>
+        {/* <SkillsCard/> */}
         <Projects/>
         <Workedwith/>
         <Contact/>
