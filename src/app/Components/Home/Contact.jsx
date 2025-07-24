@@ -30,10 +30,10 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-12 w-11/12 max-w-6xl mx-auto">
+     
         <ContactInformation />
 
-        <div className="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/2">
+        {/* <div className="bg-white shadow-lg rounded-lg p-8 w-full md:w-1/2">
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
             validationSchema={validationSchema}
@@ -55,7 +55,7 @@ const Contact = () => {
                     className="border p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
-                    name="name"
+
                     component="p"
                     className="text-red-500 text-sm mt-1"
                   />
@@ -112,8 +112,8 @@ const Contact = () => {
               </Form>
             )}
           </Formik>
-        </div>
-      </div>
+        </div> */}
+      
     </section>
   );
 };

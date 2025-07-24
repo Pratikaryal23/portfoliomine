@@ -1,46 +1,51 @@
-'use client'
-import React, { useState } from 'react';
-import { ExternalLink, Code, Globe, Award } from 'lucide-react';
+"use client";
+import React, { useState } from "react";
+import { ExternalLink, Code, Globe, Award } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Devdaha Medical College",
-    description: "Developed a comprehensive web application for Devdaha Medical College, focusing on responsive design, user-friendly layouts, and data-driven components for student information, admissions, and more.",
+    description:
+      "Developed a comprehensive web application for Devdaha Medical College, focusing on responsive design, user-friendly layouts, and data-driven components for student information, admissions, and more.",
     image: "devdaha.jpeg",
     link: "https://devdahamedicalcollege.edu.np",
     tech: ["Next.js", "React", "Tailwind"],
     category: "Web Development",
-    color: "from-purple-500 to-pink-500"
+    color: "from-purple-500 to-pink-500",
   },
   {
     title: "CSIT Association BMC",
-    description: "Collaborated on developing a web app for CSIT Association of BMC, focusing on responsive design, user-friendly layouts, and data-driven components for student information, events, and more.",
+    description:
+      "Collaborated on developing a web app for CSIT Association of BMC, focusing on responsive design, user-friendly layouts, and data-driven components for student information, events, and more.",
     image: "Csit Association Logo.png",
     link: "https://csitabmc.com",
     tech: ["React", "Node.js", "MongoDB"],
     category: "Full Stack",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
   },
   {
     title: "Neo Cart (Hackathon)",
-    description: "NeoCart is an AI-driven marketplace for authentic Nepali products, supporting small-scale businesses and promoting traditional goods with cutting-edge technology.",
+    description:
+      "NeoCart is an AI-driven marketplace for authentic Nepali products, supporting small-scale businesses and promoting traditional goods with cutting-edge technology.",
     image: "neocart.png",
     link: "https://neocart-demo.com",
     tech: ["AI/ML", "E-commerce", "React"],
     category: "AI Project",
-    color: "from-green-500 to-teal-500"
-  }
+    color: "from-green-500 to-teal-500",
+  },
 ];
 
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ['All', 'Web Development', 'Full Stack', 'AI Project'];
+  const categories = ["All", "Web Development", "Full Stack", "AI Project"];
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
@@ -61,7 +66,7 @@ const Projects = () => {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
+              animationDuration: `${3 + Math.random() * 4}s`,
             }}
           >
             <div className="w-2 h-2 bg-white rounded-full opacity-20"></div>
@@ -76,13 +81,14 @@ const Projects = () => {
             <Code className="w-4 h-4 text-cyan-400" />
             <span className="text-cyan-400 text-sm font-medium">Portfolio</span>
           </div>
-          
+
           <h2 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200 mb-4">
             Featured Projects
           </h2>
-          
+
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Showcasing innovative solutions and creative implementations across various technologies
+            Showcasing innovative solutions and creative implementations across
+            various technologies
           </p>
         </div>
 
@@ -95,8 +101,8 @@ const Projects = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {category}
@@ -116,18 +122,19 @@ const Projects = () => {
             >
               {/* Card */}
               <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/25">
-                
                 {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                ></div>
+
                 {/* Image Container */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <Image
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                     <div className="flex gap-3">
@@ -139,7 +146,7 @@ const Projects = () => {
                       </button>
                     </div>
                   </div>
-                  
+
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-black/50 backdrop-blur-sm border border-white/30 rounded-full text-xs text-white font-medium">
@@ -156,11 +163,11 @@ const Projects = () => {
                     </h3>
                     <Award className="w-5 h-5 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  
+
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech, techIndex) => (
@@ -172,7 +179,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   {/* Action Button */}
                   <a
                     href={project.link}
@@ -194,9 +201,13 @@ const Projects = () => {
               </div>
 
               {/* Floating Effect */}
-              <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${project.color} opacity-0 blur-xl transition-opacity duration-500 -z-10 ${
-                hoveredIndex === index ? 'opacity-30' : ''
-              }`}></div>
+              <div
+                className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${
+                  project.color
+                } opacity-0 blur-xl transition-opacity duration-500 -z-10 ${
+                  hoveredIndex === index ? "opacity-30" : ""
+                }`}
+              ></div>
             </div>
           ))}
         </div>
@@ -214,8 +225,13 @@ const Projects = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
         }
         .animate-float {
           animation: float 6s ease-in-out infinite;

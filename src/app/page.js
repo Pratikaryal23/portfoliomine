@@ -3,7 +3,7 @@ import Home from './Components/Home/Home'
 import About from './Components/About/About'
 import SkillsCard from './Components/Home/Skill'
 import Projects from './Components/Home/Projects'
-import Workedwith from './Components/Home/Workedwith'
+// import Workedwith from './Components/Home/Workedwith'
 import Contact from './Components/Home/Contact'
 
 const page = () => {
@@ -13,7 +13,7 @@ const page = () => {
       <About />
         {/* <SkillsCard/> */}
         <Projects/>
-        <Workedwith/>
+        {/* <Workedwith/> */}
         <Contact/>
       </div>
   )
