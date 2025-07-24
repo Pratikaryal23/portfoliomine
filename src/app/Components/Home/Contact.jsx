@@ -18,17 +18,7 @@ const validationSchema = Yup.object().shape({
 const Contact = () => {
   return (
     <section className="bg-gradient-to-r from-[#141e30] to-[#243b55] py-16">
-      <div className="text-center pb-8">
-        <h1 className="text-4xl font-extrabold text-white">
-          <span className="text-blue-600 border-b-4 border-blue-600 pb-1">
-            Contact
-          </span>{" "}
-          Me
-        </h1>
-        <p className="text-gray-100 mt-2">
-          I would love to hear from you! Feel free to reach out.
-        </p>
-      </div>
+     
 
      
         <ContactInformation />
