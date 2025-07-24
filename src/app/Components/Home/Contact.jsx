@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({
 
 const Contact = () => {
   return (
-    <section className="bg-gradient-to-r from-[#141e30] to-[#243b55] py-16">
+    <section className="bg-gradient-to-r from-[#141e30] to-[#243b55]">
      
 
      
